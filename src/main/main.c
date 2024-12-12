@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 09:21:06 by yotsurud          #+#    #+#             */
-/*   Updated: 2024/12/12 15:55:51 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/12/12 23:50:23 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static void	do_minishell(char *line)
 	t_token		*token;
 	int			command_count;
 
-	add_history(line);
+	if (*line)
+		add_history(line);
 	dup_stdio(stdio);
 	token = NULL;
 	token = lexer(line);
