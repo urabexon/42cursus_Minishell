@@ -6,7 +6,7 @@
 
 - [https://github.com/Yosshii-42/minishell_test](https://github.com/Yosshii-42/minishell_test)
 
-## Usage
+## Usage💻
 ### 必要条件(readlineのインストール)
 `readline` (シェルがコマンドを受け付けるときに使用されます。)
 ```shell
@@ -31,7 +31,17 @@ make
 ./minishell
 ```
 
-## Working Point
+## Implementation Function🎓
+Bashの基本的な機能を作成しました。
+- 適切な実行ファイルを検索して起動する（例：./a.out、/bin/ls ...）
+- 組み込み関数： echo, cd, pwd, export, unset, env, exit
+- リダイレクトによるファイルI/O管理： >, >>, <, <<
+- パイプによるプロセス間通信： |
+- シグナル： Ctrl-C、Ctrl-D、Ctrl-C
+- シングルクォート/ダブルクォートの有無による環境変数の展開 (例: $PWD, '$PATH', 「$HOME」 ...)
+- 終了ステータスの展開: $?
+
+## Working Point💡
 42Tokyoの課題では、「Norminette」と呼ばれるコーディング規約があります。<br>
 それに準拠する形で記載しなければなりません。
 
@@ -41,7 +51,7 @@ make
 その上で、for文の使用が禁止されていたり1つの関数につき25行までの記述制限がされていたりとかなり厳しいものになっており、それらに対応するためにコードをどのようにリファクタリングするかを常に考えました。<br>
 非常に頭を悩ませましたが、結果として的確に、短く無駄のないコードを記述する実装力が身についたと感じております。
 
-## Points Learned
+## Points Learned📋
 - そもそもbash、shellとは何か
 - 全体構成設計とデータ構造の定義
 - シェルの構造
@@ -59,7 +69,7 @@ make
 - 進捗とタスク管理
 - 話し合いの重要性とチーム開発の楽しさ
 
-## Overall Composition
+## Overall Composition💫
 今回の課題では、以下の点に注意しました。
 - 課題の上で必須要件、追加要件、実装しない要件(未定義要件)を明確にする。
 
@@ -74,17 +84,17 @@ bashの機能を簡易的に再現するのが課題の目的、趣旨です。<
 結果として、課題の要件項目は無事達成となりました。<br>
 要件としては非常にコンパクトで想定よりも順調なペースで進行することができて良い経験となりました。
 
-## PDF of Design Documents
+## PDF of Design Documents📝
 - [simplified_design_documents](simplified_design_documents.pdf)
 
-## Producers
+## Development Members🧑‍💻
 - hurabe (データ構造設計、lexer(tokenizer)設計、シグナル設計、各Builtinコマンド作成)
 - yotsurud (大枠の全体設計、pipe/プロセス設計、heredoc設計、各Builtinコマンド作成)
 
-## Production Period
+## Production Period📅
 - 2024/10/11~2024/12/12 (2ヶ月)
 
-## Reference
+## Reference🔖
 - [https://aosabook.org/en/v1/bash.html](https://aosabook.org/en/v1/bash.html)
 - [https://tiswww.case.edu/php/chet/readline/rltop.html](https://tiswww.case.edu/php/chet/readline/rltop.html)
 - [https://www.geeksforgeeks.org/signals-c-language/](https://www.geeksforgeeks.org/signals-c-language/)
