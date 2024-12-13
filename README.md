@@ -32,14 +32,14 @@ make
 ```
 
 ## Implementation Function🎓
-Bashの基本的な機能を作成しました。
+bashの基本的な機能を作成しました。
 - 適切な実行ファイルを検索して起動する（例：./a.out、/bin/ls ...）
 - 組み込み関数： echo, cd, pwd, export, unset, env, exit
-- リダイレクトによるファイルI/O管理： >, >>, <, <<
+- リダイレクトによるファイルI/O管理： >(上書き), >>(追記), <(読み取り), <<(ヒアドキュメント)
 - パイプによるプロセス間通信： |
 - シグナル： Ctrl-C、Ctrl-D、Ctrl-C
 - シングルクォート/ダブルクォートの有無による環境変数の展開 (例: $PWD, '$PATH', 「$HOME」 ...)
-- 終了ステータスの展開: $?
+- 終了ステータスの展開: $?（直前に実行されたコマンドの終了ステータスを取得するコマンド）
 
 ## Working Point💡
 42Tokyoの課題では、「Norminette」と呼ばれるコーディング規約があります。<br>
@@ -91,7 +91,7 @@ bashの機能を簡易的に再現するのが課題の目的、趣旨です。<
 - hurabe (データ構造設計、lexer(tokenizer)設計、シグナル設計、各Builtinコマンド作成)
 - yotsurud (大枠の全体設計、pipe/プロセス設計、heredoc設計、各Builtinコマンド作成)
 
-## Production Period📅
+## Development Period📅
 - 2024/10/11~2024/12/12 (2ヶ月)
 
 ## Reference🔖
