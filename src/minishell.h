@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 06:29:52 by yotsurud          #+#    #+#             */
-/*   Updated: 2024/12/12 16:02:37 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/12/13 20:46:43 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@
 # define CHILD 0
 # define PARENT 1
 # define EXIT_CHILD_DUP_ERR -2
-// # define SPECIAL_CHAR "~`#&*()[]{};!?"
 # define SPECIAL_TOKEN "<>|"
 # define SPECIAL_CHAR "<>|\'\""
 # define INVALID_CHAR " \t.-!@#$%^&*()+{}[];:\'\",<>?/\\|~"
@@ -175,7 +174,6 @@ void	set_kind_as_command(t_token *token, int *command_flag);
 // command
 t_cmd	*make_cmd(t_token *token, t_cmd *cmd, int command_flag);
 bool	init_cmd(t_cmd *cmd, int pipe_flag);
-// char	*make_pwd_path(char *command);
 char	*make_pwd_path(t_cmd *cmd);
 void	set_err_message(t_cmd *cmd, char *str, char *err_str);
 void	open_files(t_cmd *cmd, t_token *token);
@@ -203,20 +201,19 @@ char	*skip_spaces(char *str);
 
 // bultin_export_utils
 int		lstnew_export(t_env **start, char *env);
-// void	lstadd_front(t_env **start, t_env *new);
 
 // builtin_exit_utils
 long	*atol_pointer(char *nptr);
 
 // process
 int		run_process(t_token *token, int *stdio, int command_count);
-int		parent_process(t_cmd *cmd, int count);//t_token *token, int count);
+int		parent_process(t_cmd *cmd, int count);
 
 // end process
 void	syntax_end(t_cmd *cmd, int stdio[2]);
 void	end_process(int stdio[2]);
 void	child_exit_process(t_cmd *cmd, int stdio[2]);
-int		builtin_end_process(t_cmd *cmd);//, t_token *token);
+int		builtin_end_process(t_cmd *cmd);
 int		no_fork_process(t_cmd *cmd, int *stdio);
 void	execve_fail_process(t_cmd *cmd);
 
