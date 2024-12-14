@@ -37,7 +37,7 @@ bashの基本的な機能を作成しました。
 - 組み込み関数： echo, cd, pwd, export, unset, env, exit
 - リダイレクトによるファイルI/O管理： >(上書き), >>(追記), <(読み取り), <<(ヒアドキュメント)
 - パイプによるプロセス間通信： |
-- シグナル： Ctrl-C、Ctrl-D、Ctrl-C
+- シグナル： Ctrl-C、Ctrl-D、Ctrl-\
 - シングルクォート/ダブルクォートの有無による環境変数の展開 (例: $PWD, '$PATH', 「$HOME」 ...)
 - 終了ステータスの展開: $?（直前に実行されたコマンドの終了ステータスを取得するコマンド）
 
@@ -82,7 +82,7 @@ bashの機能を簡易的に再現するのが課題の目的、趣旨です。<
 - 提出したMinishellでは、Readline(入力処理) → Lexer(字句解析) → Expansion(環境変数展開) → CommandExecution(命令実行)といった流れで実行している。
 
 結果として、課題の要件項目は無事達成となりました。<br>
-要件としては非常にコンパクトで想定よりも順調なペースで進行することができて良い経験となりました。
+実装としては非常にコンパクトで想定よりも順調なペースで進行することができて良い経験となりました。
 
 ## PDF of Design Documents📝
 - [simplified_design_documents](simplified_design_documents.pdf)
